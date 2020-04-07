@@ -23,12 +23,12 @@ public class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritabl
         //获取第一行数据:<1,Deer Beer Driver>
         String str = value.toString();
         //得到一行中的每一个单词，以空格为分隔符 ["Deer" "Beer" "Driver"]
-        String[] words = str.split("");
+        String[] words = str.split(" ");
         //循环遍历数组
         for (String word : words) {
             //<Deer,1>,<Beer,1>,<Driver,1>
             //已经获取到每个单词,并将数据发送出去<单词,1>
-            context.write(new Text(word), new IntWritable(1));
+            context.write(new Text(word),new IntWritable(1));
         }
     }
 }
