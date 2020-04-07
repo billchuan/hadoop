@@ -1,4 +1,5 @@
 import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
@@ -13,10 +14,10 @@ import java.io.IOException;
  *  <单词,1>==<String,Int>==<Text,IntWriTable>  1:表示出现了
  *
  */
-public class WordCountMapper extends Mapper<IntWritable, Text, Text, IntWritable> {
+public class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 
     @Override
-    protected void map(IntWritable key, Text value, Context context) throws IOException, InterruptedException {
+    protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         //key:行数
         //value:每行的数据
         //获取第一行数据:<1,Deer Beer Driver>
