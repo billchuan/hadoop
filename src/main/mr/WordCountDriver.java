@@ -23,7 +23,7 @@ public class WordCountDriver {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
         //文件的输入
-        FileInputFormat.setInputPaths(job, "C:\\Users\\Lenovo\\Desktop\\test.txt");
+        FileInputFormat.setInputPaths(job, new Path("C:\\Users\\Lenovo\\Desktop\\test.txt"));
         //结果的输出
         FileOutputFormat.setOutputPath(job, new Path("D:\\temp"));
         //提交
