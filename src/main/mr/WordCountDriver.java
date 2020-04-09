@@ -10,7 +10,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 public class WordCountDriver {
     public static void main(String[] args) throws Exception {
         //实例化job
-        Job job = Job.getInstance(new Configuration());
+        Job job = Job.getInstance( new Configuration());
         //设置主类
         job.setJarByClass(WordCountDriver.class);
         //设置mapper和reduce类
@@ -22,6 +22,8 @@ public class WordCountDriver {
         //reduce数据输出类型
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
+        //设置combiner
+        job.setCombinerClass(WordCountCombiner.class);
         //文件的输入
         FileInputFormat.setInputPaths(job, "C:\\Users\\Lenovo\\Desktop\\test.txt");
         //结果的输出
