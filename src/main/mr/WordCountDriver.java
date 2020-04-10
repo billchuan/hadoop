@@ -22,10 +22,14 @@ public class WordCountDriver {
         //reduce数据输出类型
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
-        //设置combiner
+        //设置combiner统计
         job.setCombinerClass(WordCountCombiner.class);
+        //加载Partitioners分区
+        job.setPartitionerClass(WordCountPartitioners.class);
+        //设置reduce的数量
+        job.setNumReduceTasks(5);
         //文件的输入
-        FileInputFormat.setInputPaths(job, "C:\\Users\\Lenovo\\Desktop\\test.txt");
+        FileInputFormat.setInputPaths(job, "C:\\Users\\Lenovo\\Desktop\\11.txt");
         //结果的输出
         FileOutputFormat.setOutputPath(job, new Path("D:\\temp"));
         //提交
