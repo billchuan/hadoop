@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 package org.apache.hadoop.io.nativeio;
-
 import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
