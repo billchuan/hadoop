@@ -1,0 +1,8 @@
+<root>
+    <item name='org.apache.hadoop.io.NullWritable'>
+        <annotation name='java.lang.Deprecated'/>
+    </item>
+    <item name='org.apache.hadoop.io.NullWritable org.apache.hadoop.io.NullWritable get()'>
+        <annotation name='org.jetbrains.annotations.Nullable'/>
+    </item>
+</root>

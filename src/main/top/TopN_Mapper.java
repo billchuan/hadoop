@@ -19,7 +19,7 @@ import java.io.IOException;
  *
  *
  */
-public class TopN_Mapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+public class TopN_Mapper extends Mapper<LongWritable, Text, NullWritable, IntWritable> {
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
@@ -27,14 +27,14 @@ public class TopN_Mapper extends Mapper<LongWritable, Text, Text, IntWritable> {
         String str = value.toString();
         //分隔数据
         String[] counts = str.split(" ");
-        int i=0;
+        int i = 0;
         //提取每一个数字
-        for(String count:counts){
+        for (String count : counts) {
             //字符串不能比较大小，要想比较大小，只能是数字
             //将字符串转换成整形的数字
-            i=Integer.parseInt(count);
+            i = Integer.parseInt(count);
             //发送数据
-            context.write(NullWritable.get(),new IntWritable(i));
+            context.write(NullWritable.get(), new IntWritable(i));
         }
 
     }
