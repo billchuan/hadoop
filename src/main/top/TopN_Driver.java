@@ -26,9 +26,7 @@ public class TopN_Driver {
         //文件的输出
         FileOutputFormat.setOutputPath(job, new Path("D:\\topN"));
         //提交
-        boolean bool = job.waitForCompletion(true);
-        //退出
-        System.exit(bool ? 0 : 1);
+        System.exit(job.waitForCompletion(true) ? 0 : 1);
 
 
     }

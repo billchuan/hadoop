@@ -23,6 +23,7 @@ public class TopN_Reduce extends Reducer<NullWritable, IntWritable, IntWritable,
 
     //生成了TreeMap对象，Integer:表示的是key String:表示的是value  int的装箱Integer
     //TreeMap:也是按照<k1,v1>按照k1的大小进行排序
+    //它会自动排序，按照放入的key进行排序，然后这个排序是一个由小到大的排序
     static TreeMap<Integer, String> treeMap = new TreeMap<Integer, String>();
 
     @Override
