@@ -24,7 +24,7 @@ public class Dep_Driver {
         job.setOutputValueClass(NullWritable.class);
         //设置文件输入、输出路径
         FileInputFormat.setInputPaths(job, "C:\\Users\\Lenovo\\Desktop\\11.txt");
-        FileOutputFormat.setOutputPath(job, new Path("D:\\test"));
+        FileOutputFormat.setOutputPath(job, new Path("D:\\temp_dep"));
         //提交
         boolean b = job.waitForCompletion(true);
         //退出
